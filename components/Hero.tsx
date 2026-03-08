@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Mail, Linkedin, ChevronDown, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { resumeData } from "@/lib/data";
 
 const { basics } = resumeData;
@@ -55,7 +56,55 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-3xl">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
+
+          {/* Photo — desktop left, mobile top */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.15, duration: 0.7 }}
+            className="flex-shrink-0 order-first lg:order-last lg:self-center"
+          >
+            <div className="relative w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72">
+              {/* Outer glow rings */}
+              <div className="absolute inset-0 rounded-full"
+                style={{ boxShadow: "0 0 40px rgba(6,182,212,0.15), 0 0 80px rgba(6,182,212,0.07)" }} />
+              <motion.div
+                className="absolute -inset-3 rounded-full border border-cyan-DEFAULT/20"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute -inset-6 rounded-full border border-violet-DEFAULT/10"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              />
+              {/* Corner HUD ticks */}
+              {[0, 90, 180, 270].map((deg) => (
+                <div
+                  key={deg}
+                  className="absolute w-2 h-2 border-t border-l border-cyan-DEFAULT/60"
+                  style={{
+                    top: "50%", left: "50%",
+                    transform: `rotate(${deg}deg) translate(130px, -1px)`,
+                    transformOrigin: "0 0",
+                  }}
+                />
+              ))}
+              {/* Photo */}
+              <div className="relative w-full h-full rounded-full overflow-hidden border border-cyan-DEFAULT/20">
+                <Image
+                  src="/photo.jpg"
+                  alt="Anurag Tiwari"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+            </div>
+          </motion.div>
+
+        <div className="max-w-2xl">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -170,6 +219,7 @@ export default function Hero() {
               Download Resume
             </button>
           </motion.div>
+        </div>
         </div>
       </div>
 
