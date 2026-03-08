@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Mail, Linkedin, ChevronDown, ArrowRight } from "lucide-react";
+import { MapPin, Mail, Linkedin, Github, ChevronDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { resumeData } from "@/lib/data";
 
@@ -191,6 +191,15 @@ export default function Hero() {
             >
               <Linkedin className="w-3 h-3" />
               LinkedIn
+            </a>
+            <a
+              href={basics.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 font-mono text-xs text-slate-400 hover:text-cyan-DEFAULT transition-colors border border-slate-700/60 hover:border-cyan-DEFAULT/40 rounded px-3 py-1.5"
+            >
+              <Github className="w-3 h-3" />
+              GitHub
             </a>
             <span className="flex items-center gap-1.5 font-mono text-xs text-slate-500 border border-slate-800 rounded px-3 py-1.5">
               <MapPin className="w-3 h-3" />

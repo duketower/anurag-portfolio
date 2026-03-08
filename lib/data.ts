@@ -10,6 +10,7 @@ export const resumeData = {
     phone: "7399006699",
     email: "03.anurag@gmail.com",
     linkedin: "https://www.linkedin.com/in/anuragtiwari3",
+    github: "https://github.com/duketower",
     topSkills: ["Multiple Project Coordination", "People Management", "Multitasking"],
     languages: [
       { lang: "English", level: "Native or Bilingual" },

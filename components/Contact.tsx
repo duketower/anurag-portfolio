@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Linkedin, Phone, MapPin, Download, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, Phone, MapPin, Download, ArrowUpRight } from "lucide-react";
 import { resumeData } from "@/lib/data";
 
 const { basics } = resumeData;
@@ -85,6 +85,26 @@ export default function Contact() {
                 </p>
                 <p className="font-body text-sm text-slate-200 group-hover:text-cyan-DEFAULT transition-colors">
                   anuragtiwari3
+                </p>
+              </div>
+              <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-DEFAULT ml-auto flex-shrink-0 transition-colors" />
+            </a>
+
+            <a
+              href={basics.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bracket-corner group flex items-center gap-3 p-4 bg-card border border-slate-800/60 rounded-sm hover:border-cyan-DEFAULT/30 hover:bg-card-hover transition-all"
+            >
+              <div className="w-9 h-9 rounded-sm bg-cyan-DEFAULT/10 flex items-center justify-center flex-shrink-0">
+                <Github className="w-4 h-4 text-cyan-DEFAULT" />
+              </div>
+              <div className="text-left">
+                <p className="font-mono text-[9px] text-slate-500 tracking-widest uppercase mb-0.5">
+                  GitHub
+                </p>
+                <p className="font-body text-sm text-slate-200 group-hover:text-cyan-DEFAULT transition-colors">
+                  duketower
                 </p>
               </div>
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-DEFAULT ml-auto flex-shrink-0 transition-colors" />
